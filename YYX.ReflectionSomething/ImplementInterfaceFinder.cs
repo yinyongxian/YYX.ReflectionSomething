@@ -4,10 +4,9 @@ using System.Linq;
 
 namespace YYX.ReflectionSomething
 {
-    public static class DerivedClassesFinder
+    public static class ImplementInterfaceFinder
     {
         public static IEnumerable<T> Find<T>()
-            where T : class
         {
             var type = typeof(T);
             var tEnumerable =
@@ -17,7 +16,7 @@ namespace YYX.ReflectionSomething
                 .SelectMany(assembly =>
                 {
                     var types = assembly.GetTypes();
-                    var findTypes = types.Where(derivedClass => derivedClass.IsSubclassOf(type));
+                    var findTypes = types.Where(derivedClass => derivedClass.GetInterfaces().Contains(type));
                     return findTypes.Select(derivedClass => (T)assembly.CreateInstance(derivedClass.FullName, true));
                 });
             return tEnumerable;

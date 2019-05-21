@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using YYX.ReflectionSomething.Classes;
+using YYX.ReflectionSomething.Interfaces;
 
 namespace YYX.ReflectionSomething
 {
@@ -17,10 +13,13 @@ namespace YYX.ReflectionSomething
             InitializeComponent();
         }
 
-        protected override void OnLoad(EventArgs e)
+        protected override void OnShown(EventArgs e)
         {
             var bases = DerivedClassesFinder.Find<Base>();
-            var x = bases.ToList()[0];
+            var firstClass = bases.ToList()[0];
+
+            var interfaces = ImplementInterfaceFinder.Find<IPerson>();
+            var firstinterfaces = interfaces.ToList()[0];
         }
     }
 }

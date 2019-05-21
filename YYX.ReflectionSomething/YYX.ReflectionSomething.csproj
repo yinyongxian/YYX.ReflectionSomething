@@ -46,7 +46,10 @@
   <ItemGroup>
     <Compile Include="Classes\Base.cs" />
     <Compile Include="Classes\Derived.cs" />
+    <Compile Include="ImplementInterfaceFinder.cs" />
     <Compile Include="DerivedClassesFinder.cs" />
+    <Compile Include="Interfaces\Femal.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,5 +80,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
