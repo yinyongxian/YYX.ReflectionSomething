@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Base.cs" />
+    <Compile Include="Classes\AbstractDerived.cs" />
     <Compile Include="Classes\Derived.cs" />
     <Compile Include="ImplementInterfaceFinder.cs" />
     <Compile Include="DerivedClassesFinder.cs" />

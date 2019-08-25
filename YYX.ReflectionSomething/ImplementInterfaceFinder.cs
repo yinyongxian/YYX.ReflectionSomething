@@ -16,7 +16,7 @@ namespace YYX.ReflectionSomething
                 .SelectMany(assembly =>
                 {
                     var types = assembly.GetTypes();
-                    var findTypes = types.Where(derivedClass => derivedClass.GetInterfaces().Contains(type));
+                    var findTypes = types.Where(derivedClass => derivedClass.GetInterfaces().Contains(type) && !derivedClass.IsAbstract);
                     return findTypes.Select(derivedClass => (T)assembly.CreateInstance(derivedClass.FullName, true));
                 });
             return tEnumerable;
